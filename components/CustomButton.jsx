@@ -4,15 +4,22 @@ import { Text, TouchableOpacity } from "react-native";
 const CustomButton = ({
   title,
   handlePress,
-  styles,
+  containerstyles,
   textStyles,
   isLoading,
 }) => {
   return (
     <TouchableOpacity
-      className={`bg-secondary rounded-xl justify-center items-center min-h-[62px]`}
+      onPress={handlePress}
+      activeOpacity={0.7}
+      className={`bg-secondary rounded-xl justify-center items-center min-h-[62px]  ${containerstyles} ${
+        isLoading ? "opacity-50" : ""
+      }`}
+      disabled={isLoading}
     >
-      <Text className="text-primary font-psemibold text-lg">CustomButton</Text>
+      <Text className={`text-primary font-psemibold text-lg ${textStyles}`}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 };
