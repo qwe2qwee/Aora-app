@@ -3,7 +3,7 @@ import React from "react";
 
 const likes = () => {
   return (
-    <View>
+    <View className="h-full w-full bg-black-100">
       <Text>likes</Text>
     </View>
   );
